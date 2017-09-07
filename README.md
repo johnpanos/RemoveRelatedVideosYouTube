@@ -7,3 +7,4 @@ Simple javascript code that runs everytime a YouTube video loads to remove the r
 3. Open the folder you downloaded containing RemoveRelatedVideosExtension.crx
 4. Drag and drop RemoveRelatedVideosExtension.crx to the chrome://extensions/ page
 5. Confirm install
+6. You're done! Go to a YouTube video and test it out!
