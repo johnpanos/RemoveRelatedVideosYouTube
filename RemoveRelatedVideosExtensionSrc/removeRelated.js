@@ -19,6 +19,21 @@ function relatedIsLoadedNew() {
     var ytdWatch = document.getElementsByTagName("ytd-watch")[0];
     ytdWatch.setAttribute("theater-requested_", "");
     ytdWatch.setAttribute("theater", "");
+
+    var info = document.getElementById('info');
+    info.style.paddingRight = "0px";
+
+    var meta = document.getElementById('meta');
+    meta.style.paddingRight = "0px";
+    meta.style.marginLeft = "auto";
+    meta.style.marginRight = "auto";
+    meta.style.width = "fit-content";
+
+    var commentSection = document.getElementById('comments');
+    commentSection.style.paddingRight = "0px";
+    commentSection.style.marginLeft = "auto";
+    commentSection.style.marginRight = "auto";
+    commentSection.style.width = "fit-content";
 }
 
 function relatedIsLoadedOld() {
