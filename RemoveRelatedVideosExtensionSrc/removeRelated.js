@@ -1,10 +1,29 @@
-if (document.title.indexOf("YouTube") != -1) {
-    var main = document.getElementById('main');
-    // Some fixes for old YouTube design
-    if (main != undefined) {
-        main.removeChild(document.getElementById('related'));
-    } else {
-        var main2 = document.getElementById('watch7-main');
-        main2.removeChild(document.getElementById('watch7-sidebar'));
+var main = document.getElementById('main');
+
+function checkIfRelatedLoaded() {
+    main = document.getElementById('main');
+    if (main != null) {
+        var related = document.getElementById('related');
+        if (related != null) {
+            relatedIsLoadedNew();
+            clearInterval(timer);
+        }
+    } else if (document.getElementById('watch7-main') != null) {
+        relatedIsLoadedOld();
+        clearInterval(timer);
     }
 }
+
+function relatedIsLoadedNew() {
+    main.removeChild(document.getElementById('related'));
+    var ytdWatch = document.getElementsByTagName("ytd-watch")[0];
+    ytdWatch.setAttribute("theater-requested_", "");
+    ytdWatch.setAttribute("theater", "");
+}
+
+function relatedIsLoadedOld() {
+    var main2 = document.getElementById('watch7-main');
+    main2.removeChild(document.getElementById('watch7-sidebar'));
+}
+
+var timer = setInterval(function(){ checkIfRelatedLoaded() }, 50);

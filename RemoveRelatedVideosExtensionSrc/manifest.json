@@ -2,12 +2,12 @@
     "name":"Remove Related Section",
     "description":"Removes related videos section on YouTube",
     "version":"1",
-    "manifest_version":2,
+    "manifest_version": 2,
     "content_scripts": [
         {
             "matches": ["http://www.youtube.com/watch*","https://www.youtube.com/watch*"],
             "js": ["removeRelated.js"],
-            "run_at": "document_end"
+            "run_at": "document_start"
         }
         ]
 }
